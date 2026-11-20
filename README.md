@@ -97,59 +97,77 @@ Cálculo de participación relativa de cada país sobre el total mundial de asis
 
 ## Estructura del repositorio
 
-```text
-debi_tirar_mas_fotos/
+## Repository Structure
+
+debi\_tirar\_mas\_fotos/
+
 │
+
 ├── README.md
-│
-├── presentacion/
-│   └── presentacion.pdf
-│
-├── metodologia/
-│   ├── metodologia_analisis.pdf
-│   └── diccionario_de_datos.pdf
-│
-├── capas_vectoriales/
-│   ├── estadios.gpkg
-│   ├── estadios_metadata.pdf
-│   ├── paises_mundo.gpkg
-│   ├── paises_mundo_metadata.pdf
-│   ├── paises_tour.gpkg
-│   ├── paises_tour_metadata.pdf
-│   ├── tour_lineas.gpkg
-│   └── tour_lineas_metadata.pdf
-│
-└── scripts/
-    ├── scripts_tablas/
-    │   ├── conciertos_tabla.sql
-    │   ├── ciudades_tabla.sql
-    │   ├── estadios_tabla.sql
-    │   ├── paises_mundo_tabla.sql
-    │   ├── paises_tour_tabla.sql
-    │   └── spatial_ref_sys_tabla.sql
-    │
-    └── scripts_proyecto/
-        ├── scripts_1_conciertos.sql
-        ├── scripts_2_estadios.sql
-        ├── scripts_3_preparacion_bd_espacial.sql
-        ├── scripts_4_tour_lineas.sql
-        ├── scripts_5_paises_mundo.sql
-        ├── scripts_6_paises_tour.sql
-        └── scripts_7_consultas_adicionales.sql
-```
 
----
+│
 
-## Capas geográficas incluidas
+├── presentacion.pdf
 
-| Capa | Tipo de geometría | Descripción |
-|----------|----------|----------|
-| estadios.gpkg | Punto | Ciudades anfitrionas de la gira con atributos demográficos y operativos |
-| tour_lineas.gpkg | Línea | Trayectorias entre destinos consecutivos del tour |
-| paises_tour.gpkg | Polígono | Países incluidos en la gira con indicadores agregados |
-| paises_mundo.gpkg | Polígono | Capa base mundial utilizada para la elaboración cartográfica |
+│
 
-Cada capa incluye un documento independiente de metadatos donde se detallan las fuentes utilizadas, el método de elaboración, la calidad de los datos y la descripción completa de los atributos.
+├── metodologia\_y\_resultados/
+
+│   ├── metodologia\_analisis.pdf
+
+│   └── diccionario\_de\_datos.pdf
+
+│
+
+├── capas\_vectoriales\_finales/
+
+│   ├── estadios.gpkg
+
+│   ├── estadios\_metadata.pdf
+
+│   ├── paises\_mundo.gpkg
+
+│   ├── paises\_mundo\_metadata.pdf
+
+│   ├── paises\_tour.gpkg
+
+│   ├── paises\_tour\_metadata.pdf
+
+│   ├── tour\_lineas.gpkg
+
+│   └── tour\_lineas\_metadata.pdf
+
+│
+
+└── scripts\_y\_capas\_intermedias/
+
+    ├── 01\_conciertos/
+
+    ├── 02\_estadios/
+
+    ├── 03\_preparacion\_bd\_espacial/
+
+    │   ├── estadios\_geocodificados.gpkg
+
+    │   ├── estadios\_geocodificados\_tabla.sql
+
+    │   └── scripts\_3\_preparacion\_bd\_espacial.sql
+
+    │
+
+    ├── 04\_tour\_lineas/
+
+    ├── 05\_paises\_mundo/
+
+    │   ├── 01\_03\_Paises\_Mundo.rar
+
+    │   └── scripts\_5\_paises\_mundo.sql
+
+    │
+
+    ├── 06\_paises\_tour/
+
+    └── 07\_consultas\_adicionales/
 
 ---
 

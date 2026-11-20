@@ -43,3 +43,16 @@ SET pais = CASE
     WHEN pais = 'Puerto Rico (EEUU)' THEN 'Puerto Rico'
 END
 WHERE pais IN ('Paises Bajos', 'Puerto Rico (EEUU)');
+
+-- Consulta de validación cruzada: verifica mediante ST_Intersects si los puntos de los estadios caen 
+-- dentro de los límites del país asignado alfanuméricamente.
+SELECT 
+    e.estadio, 
+    e.ciudad, 
+    e.pais AS pais_estadio, 
+    p.pais AS pais_poligono 
+FROM estadios AS e 
+LEFT JOIN paises_mundo AS p 
+    ON ST_Intersects(e.geom, p.geom) 
+WHERE e.pais != p.pais 
+   OR p.pais IS NULL;

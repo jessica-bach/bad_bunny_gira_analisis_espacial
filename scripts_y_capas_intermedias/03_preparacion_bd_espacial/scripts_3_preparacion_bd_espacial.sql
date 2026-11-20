@@ -29,18 +29,7 @@ WHERE e.ciudad = g.ciudad
 
 
 -- 3.4. Control de calidad espacial y correcciones topológicas
--- Consulta de validación cruzada: verifica mediante ST_Intersects si los puntos caen 
--- dentro de los límites del país asignado alfanuméricamente.
-SELECT 
-    e.estadio, 
-    e.ciudad, 
-    e.pais AS pais_estadio, 
-    p.pais AS pais_poligono 
-FROM estadios AS e 
-LEFT JOIN paises_mundo AS p 
-    ON ST_Intersects(e.geom, p.geom) 
-WHERE e.pais != p.pais 
-   OR p.pais IS NULL; 
+ 
 
 -- Corrección manual de la geometría para Santiago de Chile tras la auditoría.
 UPDATE estadios

@@ -20,7 +20,7 @@ region,
 SUM(asist_total_pais) 
 FROM paises_tour
 GROUP BY(region) 
-ORDER BY SUM(asist_total_pais) DESC
+ORDER BY SUM(asist_total_pais) DESC;
 
 -- 7.2. Diapositiva 23. Cálculo de media y mediana de CO2 per cápita
 SELECT 
